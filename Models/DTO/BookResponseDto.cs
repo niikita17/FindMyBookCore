@@ -10,6 +10,7 @@ namespace MyBook_Backend.Models.DTO
 
 
         public int Price { get; set; }
+        public int CategoryId {  get; set; }
 
         public string CategoryName { get; set; }
        

@@ -4,9 +4,7 @@ result rapper
 
 
 
-
-
-
+// promises, admin
 
 
 
@@ -15,3 +13,129 @@ Caching Strategy
 Intelligent Search 
 Inventory & Order Management System (OMS)o prevent overselling. Include stock level updates, order status
 Payment Gateway Integration: 
+You already have JWT.
+
+Now add:
+
+Admin/User authorization
+
+Example:
+
+[Authorize(Roles = "Admin")]
+
+Admin can:
+
+add books
+delete books
+
+User can:
+
+buy books
+view books
+
+This is VERY important.
+
+2️⃣ Global Exception Middleware
+
+Huge improvement.
+
+Instead of:
+
+try catch everywhere
+
+Use:
+
+centralized exception middleware
+
+This is production backend practice.
+
+3️⃣ Password Hashing
+
+MANDATORY.
+
+Use:
+
+BCrypt.Net
+
+Plain password storage is unacceptable in interviews.
+
+4️⃣ React Frontend (VERY IMPORTANT)
+
+This is where many backend learners fail.
+
+You NEED:
+
+full frontend integration
+
+with:
+
+login
+token storage
+protected routes
+product listing
+pagination
+cart
+5️⃣ Redis Caching
+
+This becomes a BIG differentiator.
+
+Example:
+
+cache books list
+reduce DB calls
+
+This immediately makes your backend look more advanced.
+
+6️⃣ API Documentation
+
+Add:
+
+Swagger properly
+
+with JWT authentication support.
+
+Very important for professionalism.
+
+7️⃣ Logging
+
+Use:
+
+Serilog
+
+or built-in logging.
+
+Shows production awareness.
+
+8️⃣ Payment Gateway
+
+For book store:
+
+Razorpay or Stripe
+
+This is a HUGE resume booster.
+
+Most student projects stop at CRUD.
+
+9️⃣ Deployment (CRITICAL)
+
+Without deployment:
+project feels incomplete.
+
+Deploy:
+
+Backend → Render / Railway / Azure
+Frontend → Vercel
+
+Recruiters LOVE live projects.
+
+🔟 Proper README
+
+Very underrated.
+
+Add:
+
+screenshots
+features
+architecture
+API endpoints
+setup guide

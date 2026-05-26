@@ -26,16 +26,21 @@ namespace MyBook_Backend.Repository
           
             var extension = Path.GetExtension(image.FileName).ToLower();
           
-            var fileName = Guid.NewGuid().ToString()
+            var fileName = Guid.NewGuid().ToString() 
                          + extension;
 
             var folderPath = Path.Combine(
              _environment.WebRootPath,
              "images",
              "books");
+
             if(oldfile!=null)
             {
-                string oldfilePath = Path.Combine(_environment.WebRootPath, "images", fileName);
+                string oldfilePath =
+    Path.Combine(
+        _environment.WebRootPath,
+        oldfile
+    );
 
                 if (System.IO.File.Exists(oldfilePath))
                 {
@@ -61,7 +66,7 @@ namespace MyBook_Backend.Repository
         {
 
 
-            var fileName = uploadImage(book.Image);
+            var fileName = await uploadImage(book.Image);
 
             var newbook = new Book
             {
@@ -69,56 +74,87 @@ namespace MyBook_Backend.Repository
                 Description = book.Description,
                 Price = book.Price,
                 CategoryId = book.CategoryId,
-                ImageUrl = $"images/products/{fileName}"
+                ImageUrl = $"images/books/{fileName}"
             };
 
            
             await _dbContext.Books.AddAsync(newbook);
             await _dbContext.SaveChangesAsync();
+            await _dbContext.Entry(newbook)
+       .Reference(b => b.Category)
+       .LoadAsync();
 
             return newbook;
         }
 
         public async Task<Book> Delete(int Id)
         {
-            Book book = await _dbContext.Books.FindAsync(Id);
-            _dbContext.Books.Remove(book);
-            _dbContext.SaveChanges();
-            return book;
+            Book book = await _dbContext.Books
+                    .FindAsync(Id);
 
+            if (book == null)
+            {
+                return null;
+            }
+
+            // DELETE IMAGE
+            if (!string.IsNullOrEmpty(book.ImageUrl))
+            {
+                string imagePath =
+                    Path.Combine(
+                        _environment.WebRootPath,
+                        book.ImageUrl
+                    );
+
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+            }
+
+            _dbContext.Books.Remove(book);
+
+            await _dbContext.SaveChangesAsync();
+
+            return book;
         }
 
         public async Task<Book> Edit(int Id, CreateProductDto model)
         {
 
-            Book existingBook =await  _dbContext.Books.FindAsync(Id);
+            Book existingBook = await _dbContext.Books
+    .Include(b => b.Category)
+    .FirstOrDefaultAsync(b => b.Id == Id);
             string fileName = "";
-            if (model.Image == null)
+            if (model.Image != null)
             {
-                 fileName = await uploadImage(model.Image);
+                fileName = await uploadImage(model.Image, existingBook.ImageUrl);
+                 existingBook.ImageUrl = $"images/books/{fileName}";
+
             }
-             fileName =await  uploadImage(model.Image, existingBook.ImageUrl);
-            if (fileName == null)
-                throw new ArgumentNullException();
+            
+       
 
             existingBook.CategoryId = model.CategoryId;
             existingBook.Title = model.Title;
             existingBook.Price = model.Price;
             existingBook.Description = model.Description;
-            existingBook.ImageUrl = $"images/products/{fileName}";
-            await _dbContext.Books.AddAsync(existingBook);
+           
+
             await _dbContext.SaveChangesAsync();
 
-            return existingBook;
+        
 
+            return existingBook;
         }
 
-     
 
-        public async Task<Book> Get(int Id)
+
+        public async Task<Book?> Get(int id)
         {
-            Book book = await _dbContext.Books.FindAsync(Id);
-            return book;
+            return await _dbContext.Books
+                .Include(b => b.Category)
+                .FirstOrDefaultAsync(b => b.Id == id);
         }
 
         public IQueryable<Book> GetAll()

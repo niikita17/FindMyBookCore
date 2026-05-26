@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity.Data;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using MyBook_Backend.Models.DTO;
 using MyBook_Backend.Repository.IRepository;
+using MyBook_Backend.Services.IServices;
+using System.Security.Claims;
 
 namespace MyBook_Backend.Controllers
 {
@@ -10,11 +13,11 @@ namespace MyBook_Backend.Controllers
   
     public class AuthController:ControllerBase
     {
-        private readonly IAuthRepository _authRepository;
-        public AuthController(IAuthRepository authRepository)
+        private readonly IAuthService _authService;
+        public AuthController(IAuthService authService)
         {
 
-            _authRepository = authRepository;
+            _authService = authService;
         }
 
 
@@ -27,13 +30,87 @@ namespace MyBook_Backend.Controllers
             if (request == null)
                 return BadRequest("Invalid request");
 
-            var result = await _authRepository.Login(request.Email, request.Password);
+            var result = await _authService.Login
+                (request.Email, request.Password);
 
-        
+            if (result == null)
+            {
+                return Unauthorized();
+            }
+            if (!result.IsSuccess)
+            {
+                return Unauthorized(result);
+            }
+            var refreshToken = result.Data.RefreshToken;
+            Response.Cookies.Append(
+           "refreshToken",
+           refreshToken,
+           new CookieOptions
+           {
+               HttpOnly = true,
+               Secure = false,
+               SameSite = SameSiteMode.None,
+               Expires =
+                   DateTime.UtcNow
+                       .AddDays(7)
+           });
 
-            return Ok(result);
+
+            return Ok(result.Data.AccessToken);
         }
 
 
+  
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken()
+        {
+            var refreshToken =
+                Request.Cookies["refreshToken"];
+
+            if (string.IsNullOrEmpty(refreshToken))
+            {
+                return Unauthorized();
+            }
+
+            var result =
+                await _authService.RefreshToken(refreshToken);
+
+            if (result == null || !result.IsSuccess)
+            {
+                return Unauthorized();
+            }
+
+            Response.Cookies.Append(
+                "refreshToken",
+                result.Data.RefreshToken,
+                new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false,
+                    SameSite = SameSiteMode.None,
+                    Expires = DateTime.UtcNow.AddDays(7)
+                });
+
+            return Ok(result.Data.AccessToken);
+        }
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            int userId = int.Parse(
+      User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+
+            await _authService.Logout(userId);
+            Response.Cookies.Delete(
+    "refreshToken",
+    new CookieOptions
+    {
+        HttpOnly = true,
+        Secure = false,
+        SameSite = SameSiteMode.None
+    });
+
+            return Ok();
+        }
     }
 }

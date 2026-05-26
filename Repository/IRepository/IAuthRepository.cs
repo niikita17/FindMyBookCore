@@ -7,14 +7,15 @@ namespace MyBook_Backend.Repository.IRepository
 {
     public interface IAuthRepository
     {
-         string GenerateRefreshToken();
-         string GenerateToken(User user);
-        public Task<LoggedInUserDto>   Login(string email, string password);
+         
+        public  Task Update(User user);
 
 
-            
-            
-            
-            
+       public Task<User?> GetUserByRefreshToken(
+    string refreshToken);
+
+    
+
+
     }
 }

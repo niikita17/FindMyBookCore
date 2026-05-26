@@ -29,14 +29,14 @@ namespace MyBook_Backend.Services
             }
             var allowedExtensions = new[]
             {
-                "jpg",
+                ".jpg",
                 ".jpeg",
                 ".png"
             };
             var extension = Path.GetExtension(book.Image.FileName).ToLower();
             if (!allowedExtensions.Contains(extension))
             {
-                throw new Exception("Only jpg, jpeg, png allowed");
+                return Result<BookResponseDto>.Failure("Somting went wrong");
             }
 
 
@@ -52,6 +52,7 @@ namespace MyBook_Backend.Services
                 Title = newBook.Title,
                 Description = newBook.Description,
                 Price = newBook.Price,
+                CategoryId=newBook.CategoryId,
                 CategoryName = newBook.Category.Name,
                 ImageUrl = newBook.ImageUrl
             };
@@ -71,18 +72,18 @@ namespace MyBook_Backend.Services
             Book book=await _bookRepository.Delete(Id);
             if(book == null)
             {
-                 throw new Exception("Something went wrong while deleting");
+                return Result<Book>.Failure("Id is null");
             }
             return Result<Book>.Success(book);
 
         }
 
-        public async Task<Result<BookResponseDto>> EditbyId(int Id, CreateProductDto book)
+        public async Task<Result<BookResponseDto>> EditbyId(int id, CreateProductDto book)
         {
 
-            Book editedBook = await _bookRepository.Edit(Id, book);
+            Book editedBook = await _bookRepository.Edit(id, book);
             if (editedBook == null)
-                 throw new Exception("someting went wrong");
+                return Result<BookResponseDto>.Failure("Id is null");
 
             var res = new BookResponseDto
             {
@@ -90,6 +91,7 @@ namespace MyBook_Backend.Services
                 Title = editedBook.Title,
                 Description = editedBook.Description,
                 Price = editedBook.Price,
+                CategoryId=editedBook.CategoryId,
                 CategoryName = editedBook.Category.Name,
                 ImageUrl = editedBook.ImageUrl
             };
@@ -97,22 +99,31 @@ namespace MyBook_Backend.Services
 
 
         }
-       
-
-        public async Task<Result<BookResponseDto>> Get(int Id)
+        public async Task<Result<BookResponseDto>>
+       Get(int id)
         {
-           var book=await _bookRepository.Get(Id);
-            var result = new BookResponseDto
+            var book =
+                await _bookRepository.Get(id);
+
+            if (book == null)
+            {
+                return Result<BookResponseDto>
+                    .Failure("Book not found");
+            }
+
+            var response = new BookResponseDto
             {
                 Id = book.Id,
                 Title = book.Title,
                 Description = book.Description,
                 Price = book.Price,
-                CategoryName = book.Category.Name,
-                ImageUrl = book.ImageUrl
+                ImageUrl = book.ImageUrl,
+                CategoryId=book.CategoryId,
+                CategoryName = book.Category?.Name
             };
 
-            return Result<BookResponseDto>.Success(result, "sucess");
+            return Result<BookResponseDto>
+                .Success(response);
         }
 
         public async Task<Result<PagedResponseDto<BookResponseDto>>> GetAll(string? search,int? categoryId,int page = 1,int pageSize = 10,string? sortBy = null)
@@ -158,6 +169,8 @@ namespace MyBook_Backend.Services
            Title = b.Title,
            Price = b.Price,
            ImageUrl = b.ImageUrl,
+           CategoryId=b.CategoryId,
+
            CategoryName = b.Category.Name,
            Description=b.Description
        })

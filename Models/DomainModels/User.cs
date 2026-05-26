@@ -20,6 +20,6 @@ namespace MyBook_Backend.Models.DomainModels
         public Role Role { get; set; }
         public string? RefreshToken { get; set; }
 
-        public DateTime RefreshTokenExpiryTime { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

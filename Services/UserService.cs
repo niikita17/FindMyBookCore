@@ -111,7 +111,7 @@ namespace MyBook_Backend.Services
                 return Result<UserResponseDto>.Failure("Id is null");
           var user=  await _userRepository.DeleteUser(Id);
             if(user==null)
-                throw new ArgumentNullException();
+                return Result<UserResponseDto>.Failure("something went wrong");
             var response = new UserResponseDto
             {
 
