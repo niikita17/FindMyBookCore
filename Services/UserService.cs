@@ -1,4 +1,5 @@
-﻿using MyBook_Backend.Models.DomainModels;
+﻿using Microsoft.Extensions.Caching.Memory;
+using MyBook_Backend.Models.DomainModels;
 using MyBook_Backend.Models.DTO;
 using MyBook_Backend.Repository.IRepository;
 using MyBook_Backend.Services.IServices;
@@ -8,10 +9,12 @@ namespace MyBook_Backend.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMemoryCache _cache;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IMemoryCache cache)
         {
             _userRepository = userRepository;
+            _cache= cache;
         }
         public async Task<Result<UserResponseDto>> AddUserByAdmin(RegisterUserDto model)
         {
@@ -39,7 +42,7 @@ namespace MyBook_Backend.Services
                 Name = model.Name,
                 Email = model.Email,
                 MobileNo = model.MobileNo,
-                RoleId = model.RoleId,
+                RoleId = 2,
                 Password = hashedPassword
             };
 
@@ -70,6 +73,7 @@ namespace MyBook_Backend.Services
 
             var exists = await _userRepository.GetUserByEmail(model.Email);
 
+
             if (exists != null)
             {
                 return Result<UserResponseDto>
@@ -90,6 +94,7 @@ namespace MyBook_Backend.Services
             };
 
             await _userRepository.RegisterUser(user);
+            _cache.Remove("admin_dashboard");
             var response = new UserResponseDto
             {
 
@@ -120,7 +125,7 @@ namespace MyBook_Backend.Services
                 MobileNo = user.MobileNo,
                 RoleId = user.RoleId
             };
-
+            _cache.Remove("admin_dashboard");
             return Result<UserResponseDto>.Success(response, "User Deleted Sucessfully");
         }
 

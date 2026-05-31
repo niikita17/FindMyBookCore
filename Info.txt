@@ -4,8 +4,7 @@ result rapper
 
 
 
-// promises, admin
-
+// promises, 
 
 
 
@@ -15,18 +14,9 @@ Inventory & Order Management System (OMS)o prevent overselling. Include stock le
 Payment Gateway Integration: 
 You already have JWT.
 
-Now add:
 
-Admin/User authorization
 
-Example:
 
-[Authorize(Roles = "Admin")]
-
-Admin can:
-
-add books
-delete books
 
 User can:
 
@@ -49,13 +39,6 @@ centralized exception middleware
 
 This is production backend practice.
 
-3️⃣ Password Hashing
-
-MANDATORY.
-
-Use:
-
-BCrypt.Net
 
 Plain password storage is unacceptable in interviews.
 
@@ -139,3 +122,11 @@ features
 architecture
 API endpoints
 setup guide
+
+
+
+//what to learn 
+//how to regigster the services in program .cs
+// what is hhptcontext
+// How I Logger works here 
+// order of using services in program.cs 

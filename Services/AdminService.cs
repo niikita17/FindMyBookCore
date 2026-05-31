@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client;
+﻿using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Identity.Client;
 using MyBook_Backend.Models.DTO;
 using MyBook_Backend.Repository.IRepository;
 using MyBook_Backend.Services.IServices;
@@ -8,22 +9,19 @@ namespace MyBook_Backend.Services
     public class AdminService
       : IAdminService
     {
-        private readonly
-            IAdminRepository
-            _adminRepository;
+        private readonly IAdminRepository  _adminRepository;
+        private readonly IMemoryCache _cache;
 
-        public AdminService(
-            IAdminRepository
-            adminRepository)
+        public AdminService( IAdminRepository adminRepository, IMemoryCache cache)
         {
-            _adminRepository =
-                adminRepository;
+            _adminRepository =adminRepository;
+            _cache = cache;
         }
 
-        public async Task<
-            Result<AdminDashBoardDto>>
-            GetDashboard()
+        public async Task<  Result<AdminDashBoardDto>>  GetDashboard()
         {
+
+
             var totalBooks =
                 await _adminRepository
                     .GetTotalBooks();

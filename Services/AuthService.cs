@@ -15,13 +15,15 @@ namespace MyBook_Backend.Services
     {
         public readonly IAuthRepository _authRepository;
         public readonly IUserRepository _userRepository;
-        private readonly IConfiguration
-     _config;
-        public AuthService(IAuthRepository authRepository, IUserRepository userRepository, IConfiguration configuration)
+        private readonly IConfiguration  _config;
+        private readonly  IHttpContextAccessor _httpContextAccessor;
+
+        public AuthService(IAuthRepository authRepository, IUserRepository userRepository, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _authRepository = authRepository;
-            _userRepository= userRepository;
-            _config = configuration; 
+            _userRepository = userRepository;
+            _config = configuration;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public string GenerateRefreshToken()
@@ -35,8 +37,6 @@ namespace MyBook_Backend.Services
             return Convert.ToBase64String(randomNumber);
         }
         public string GenerateToken(User user)
-
-
 
         {
             var claims = new List<Claim>
@@ -59,8 +59,7 @@ new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        public async Task<Result<LoggedInUserDto>>
-    Login(string email, string password)
+        public async Task<Result<LoggedInUserDto>> Login(string email, string password)
         {
             if (string.IsNullOrEmpty(email)
                || string.IsNullOrEmpty(password))
@@ -79,7 +78,12 @@ new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                     .Failure("User not found");
             }
 
-            if (user.Password != password)
+            bool isValid =
+       BCrypt.Net.BCrypt.Verify(
+           password,
+           user.Password);
+
+            if (!isValid)
             {
                 return Result<LoggedInUserDto>
                     .Failure(
@@ -111,8 +115,7 @@ new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                 .Success(dto,
                     "User logged in successfully");
         }
-        public async Task<Result<LoggedInUserDto>>
-    RefreshToken(string refreshToken)
+        public async Task<Result<LoggedInUserDto>> RefreshToken(string refreshToken)
         {
             var user =
                 await _authRepository
@@ -162,6 +165,22 @@ new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             user.RefreshTokenExpiryTime = null;
 
             await _authRepository.Update(user);
+        }
+
+
+
+        public int getLoggedInUserId
+        {
+            get
+            {
+                return int.Parse(
+                    _httpContextAccessor
+                        .HttpContext!
+                        .User
+                        .FindFirst(
+                            ClaimTypes.NameIdentifier)!
+                        .Value);
+            }
         }
 
     }

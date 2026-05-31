@@ -7,5 +7,6 @@ namespace MyBook_Backend.Services.IServices
         public Task<Result<LoggedInUserDto>> Login(string email, string password);
         public  Task<Result<LoggedInUserDto>>RefreshToken(string refreshToken);
         public Task Logout(int userId);
+        int getLoggedInUserId { get; }
     }
 }

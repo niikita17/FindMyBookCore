@@ -17,9 +17,8 @@ namespace MyBook_Backend.Models.DTO
         public string Password { get; set; }
         [Required]
         public string MobileNo { get; set; }
-        [Required]
-        public string RoleName { get; set; }
-        public int RoleId { get; set; }
+       
+        
 
 
     }

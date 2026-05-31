@@ -2,29 +2,36 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyBook_Backend.Data;
+using MyBook_Backend.Middlewares;
 using MyBook_Backend.Repos;
 using MyBook_Backend.Repository;
 using MyBook_Backend.Repository.IRepository;
 using MyBook_Backend.Services;
 using MyBook_Backend.Services.IServices;
+using Serilog;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IAuditRepository,AuditRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services .AddScoped<IAuditService, AuditService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var jwtKey = builder.Configuration["Jwt:Key"];
@@ -64,6 +71,24 @@ builder.Services.AddCors(options =>
         });
 });
 
+//loggong service
+Log.Logger = new LoggerConfiguration()
+
+    .MinimumLevel.Information()
+
+    .WriteTo.Console()
+
+    .WriteTo.File(
+        "logs/log-.txt",
+        rollingInterval:
+            RollingInterval.Day
+    )
+
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
+
 var app = builder.Build();
 
 
@@ -79,10 +104,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseCors("AllowAll");
+app.UseMiddleware<
+    ExceptionMiddleware>();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
+app.UseSerilogRequestLogging();
 app.MapControllers();
 
 app.Run();

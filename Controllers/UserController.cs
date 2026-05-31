@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MyBook_Backend.Models.DomainModels;
 using MyBook_Backend.Models.DTO;
-using MyBook_Backend.Repository.IRepository;
 using MyBook_Backend.Services.IServices;
 using System.ComponentModel.DataAnnotations;
 
@@ -11,7 +9,7 @@ namespace MyBook_Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
+   
     public class UserController : Controller
     {
         private readonly IUserService _userService;
@@ -20,7 +18,7 @@ namespace MyBook_Backend.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> Post(RegisterUserDto user)
         {
             if (user == null)

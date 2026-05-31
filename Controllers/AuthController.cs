@@ -1,23 +1,27 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using MyBook_Backend.Models.DTO;
 using MyBook_Backend.Repository.IRepository;
 using MyBook_Backend.Services.IServices;
+using Serilog;
 using System.Security.Claims;
 
 namespace MyBook_Backend.Controllers
 {
     [ApiController]
     [Route("api/auth")]
-  
+    
     public class AuthController:ControllerBase
     {
         private readonly IAuthService _authService;
-        public AuthController(IAuthService authService)
+        private readonly ILogger<AuthController> _logger;
+        public AuthController(IAuthService authService, ILogger<AuthController> logger)
         {
 
             _authService = authService;
+            _logger = logger;
         }
 
 
@@ -27,16 +31,19 @@ namespace MyBook_Backend.Controllers
      
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
+
+      
             if (request == null)
                 return BadRequest("Invalid request");
 
             var result = await _authService.Login
                 (request.Email, request.Password);
-
+          
             if (result == null)
             {
-                return Unauthorized();
+                return BadRequest();
             }
+            Console.WriteLine(result.Message);
             if (!result.IsSuccess)
             {
                 return Unauthorized(result);
@@ -93,6 +100,8 @@ namespace MyBook_Backend.Controllers
 
             return Ok(result.Data.AccessToken);
         }
+
+        [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {

@@ -11,6 +11,7 @@ namespace MyBook_Backend.Controllers
 {
     [Route("api/book")]
     [ApiController]
+    [Authorize]
     public class BookController : ControllerBase
     {
         public readonly IBookService _bookService;
@@ -27,18 +28,17 @@ namespace MyBook_Backend.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
-            {
+          
                 var result = await _bookService
                     .Create(dto);
 
                 return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            
+          
+          
         }
+
+
         [Authorize]
         [HttpGet("getall")]
 
@@ -92,18 +92,14 @@ namespace MyBook_Backend.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
-            {
+
 
                 var result = await _bookService.EditbyId(id, dto);
                 if (!result.IsSuccess)
                     return BadRequest(result.Message);
                 return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            
+         
         }
 
         [Authorize]

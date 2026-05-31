@@ -14,7 +14,11 @@ namespace MyBook_Backend.Data
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
+        public DbSet<CartItem> CartItems { get; set; }
+
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -74,6 +74,7 @@ namespace MyBook_Backend.Repository
                 Description = book.Description,
                 Price = book.Price,
                 CategoryId = book.CategoryId,
+                StockQuantity = book.StockQuantity,
                 ImageUrl = $"images/books/{fileName}"
             };
 
@@ -138,6 +139,7 @@ namespace MyBook_Backend.Repository
             existingBook.CategoryId = model.CategoryId;
             existingBook.Title = model.Title;
             existingBook.Price = model.Price;
+            existingBook.StockQuantity = model.StockQuantity;
             existingBook.Description = model.Description;
            
 
