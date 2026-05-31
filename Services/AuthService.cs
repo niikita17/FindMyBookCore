@@ -46,9 +46,13 @@ new Claim(ClaimTypes.Name, user.Email),
 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
 
             };
-            var key = new SymmetricSecurityKey(
-           Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var key =
+       _config["Jwt:Key"]
+       ?? throw new Exception("JWT Key Missing");
+            var securityKey =
+    new SymmetricSecurityKey(
+        Encoding.UTF8.GetBytes(key));
+            var creds = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],
