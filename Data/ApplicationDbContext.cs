@@ -33,7 +33,7 @@ namespace MyBook_Backend.Data
                 {
                     Id=1,
                     Name = "Admin user1",
-                    Password = "Admin123",
+                    Password = "$2a$11$MwbRt0VgfBwSDVIBQGkGduzppQYA2OY6tdgB8/RQZVHhuXpFniZPq",
                     Email = "admin@gmail.com",
                     RoleId = 1,
                     MobileNo = "123456789"
