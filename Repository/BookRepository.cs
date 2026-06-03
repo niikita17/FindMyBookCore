@@ -3,70 +3,123 @@ using MyBook_Backend.Data;
 using MyBook_Backend.Models.DomainModels;
 using MyBook_Backend.Models.DTO;
 using MyBook_Backend.Repository.IRepository;
-
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 namespace MyBook_Backend.Repository
 {
     public class BookRepository : IBookRepository
     {
         public readonly ApplicationDbContext _dbContext;
         private readonly IWebHostEnvironment _environment;
+        private readonly Cloudinary _cloudinary;
 
-      
 
-        public BookRepository(ApplicationDbContext dbcontext, IWebHostEnvironment environment)
+
+        public BookRepository(ApplicationDbContext dbcontext, IWebHostEnvironment environment, IConfiguration config)
         {
             _environment = environment;
             _dbContext = dbcontext;
+            var account = new Account(
+        config["Cloudinary:CloudName"],
+        config["Cloudinary:ApiKey"],
+        config["Cloudinary:ApiSecret"]);
+
+
+            _cloudinary = new Cloudinary(account);
 
         }
 
-        public async Task<string> uploadImage( IFormFile image, string oldfile=null)
+        //    public async Task<string> uploadImage( IFormFile image, string oldfile=null)
 
+        //    {
+
+        //        var extension = Path.GetExtension(image.FileName).ToLower();
+
+        //        var fileName = Guid.NewGuid().ToString() 
+        //                     + extension;
+
+        //        var folderPath = Path.Combine(
+        //         _environment.WebRootPath,
+        //         "images",
+        //         "books");
+
+        //        if(oldfile!=null)
+        //        {
+        //            string oldfilePath =
+        //Path.Combine(
+        //    _environment.WebRootPath,
+        //    oldfile
+        //);
+
+        //            if (System.IO.File.Exists(oldfilePath))
+        //            {
+        //                System.IO.File.Delete(oldfilePath);
+        //            }
+        //        }
+
+
+        //        if (!Directory.Exists(folderPath))
+        //        {
+        //            Directory.CreateDirectory(folderPath);
+        //        }
+        //        var filePath = Path.Combine(folderPath, fileName);
+        //        using (var stream = new FileStream(filePath, FileMode.Create))
+        //        {
+        //            await image.CopyToAsync(stream);
+        //        }
+        //        return fileName;
+        //    }
+
+        //with cloudnary
+        public async Task<CloudinaryUploadResultDto> uploadImage(
+    IFormFile image,
+    string oldFile = null)
         {
-          
-            var extension = Path.GetExtension(image.FileName).ToLower();
-          
-            var fileName = Guid.NewGuid().ToString() 
-                         + extension;
+            if (image == null || image.Length == 0)
+                return null;
 
-            var folderPath = Path.Combine(
-             _environment.WebRootPath,
-             "images",
-             "books");
+            using var stream =
+                image.OpenReadStream();
 
-            if(oldfile!=null)
-            {
-                string oldfilePath =
-    Path.Combine(
-        _environment.WebRootPath,
-        oldfile
-    );
-
-                if (System.IO.File.Exists(oldfilePath))
+            var uploadParams =
+                new ImageUploadParams
                 {
-                    System.IO.File.Delete(oldfilePath);
-                }
-            }
+                    File = new FileDescription(
+                        image.FileName,
+                        stream),
 
+                    Folder = "FindMyBook"
+                };
 
-            if (!Directory.Exists(folderPath))
+            var uploadResult =
+                await _cloudinary.UploadAsync(
+                    uploadParams);
+
+            return new CloudinaryUploadResultDto
             {
-                Directory.CreateDirectory(folderPath);
-            }
-            var filePath = Path.Combine(folderPath, fileName);
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await image.CopyToAsync(stream);
-            }
-            return fileName;
+                Url = uploadResult.SecureUrl.ToString(),
+                PublicId = uploadResult.PublicId
+            };
         }
 
+        private async Task DeleteImageFromCloudinary(
+    string publicId)
+        {
+            if (string.IsNullOrEmpty(publicId))
+                return;
 
+            var deleteParams =
+                new DeletionParams(publicId);
+
+            await _cloudinary.DestroyAsync(
+                deleteParams);
+        }
         public async Task<Book> Create(CreateProductDto book)
         {
 
 
-            var fileName = await uploadImage(book.Image);
+            var uploaded =
+     await uploadImage(book.Image);
 
             var newbook = new Book
             {
@@ -75,7 +128,9 @@ namespace MyBook_Backend.Repository
                 Price = book.Price,
                 CategoryId = book.CategoryId,
                 StockQuantity = book.StockQuantity,
-                ImageUrl = $"images/books/{fileName}"
+                ImageUrl = uploaded.Url,
+                CloudinaryPublicId =
+        uploaded.PublicId
             };
 
            
@@ -90,6 +145,8 @@ namespace MyBook_Backend.Repository
 
         public async Task<Book> Delete(int Id)
         {
+
+            
             Book book = await _dbContext.Books
                     .FindAsync(Id);
 
@@ -99,20 +156,21 @@ namespace MyBook_Backend.Repository
             }
 
             // DELETE IMAGE
-            if (!string.IsNullOrEmpty(book.ImageUrl))
-            {
-                string imagePath =
-                    Path.Combine(
-                        _environment.WebRootPath,
-                        book.ImageUrl
-                    );
+            //if (!string.IsNullOrEmpty(book.ImageUrl))
+            //{
+            //    string imagePath =
+            //        Path.Combine(
+            //            _environment.WebRootPath,
+            //            book.ImageUrl
+            //        );
 
-                if (System.IO.File.Exists(imagePath))
-                {
-                    System.IO.File.Delete(imagePath);
-                }
-            }
-
+            //    if (System.IO.File.Exists(imagePath))
+            //    {
+            //        System.IO.File.Delete(imagePath);
+            //    }
+            //}
+            await DeleteImageFromCloudinary(
+    book.CloudinaryPublicId);
             _dbContext.Books.Remove(book);
 
             await _dbContext.SaveChangesAsync();
@@ -129,12 +187,20 @@ namespace MyBook_Backend.Repository
             string fileName = "";
             if (model.Image != null)
             {
-                fileName = await uploadImage(model.Image, existingBook.ImageUrl);
-                 existingBook.ImageUrl = $"images/books/{fileName}";
+                await DeleteImageFromCloudinary(
+                    existingBook.CloudinaryPublicId);
 
+                var uploaded =
+                    await uploadImage(model.Image);
+
+                existingBook.ImageUrl =
+                    uploaded.Url;
+
+                existingBook.CloudinaryPublicId =
+                    uploaded.PublicId;
             }
-            
-       
+
+
 
             existingBook.CategoryId = model.CategoryId;
             existingBook.Title = model.Title;

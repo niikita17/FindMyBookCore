@@ -12,6 +12,8 @@
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public string ImageUrl { get; set; } = null;
+        public string? CloudinaryPublicId { get; set; }
+
 
     }
 }
