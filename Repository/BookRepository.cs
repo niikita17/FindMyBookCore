@@ -102,7 +102,7 @@ namespace MyBook_Backend.Repository
             };
         }
 
-        private async Task DeleteImageFromCloudinary(
+       public async Task DeleteImageFromCloudinary(
     string publicId)
         {
             if (string.IsNullOrEmpty(publicId))
@@ -232,7 +232,6 @@ namespace MyBook_Backend.Repository
                 .AsQueryable();
         }
 
-     
-
+       
     }
 }

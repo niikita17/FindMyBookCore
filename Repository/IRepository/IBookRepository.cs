@@ -18,7 +18,7 @@ namespace MyBook_Backend.Repository.IRepository
 
 
         public Task<CloudinaryUploadResultDto> uploadImage(IFormFile Image, string oldFile);
-        private async Task DeleteImageFromCloudinary(string publicId);
+        public  Task DeleteImageFromCloudinary(string publicId);
     }
 
 

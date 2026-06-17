@@ -59,6 +59,8 @@ namespace MyBook_Backend.Controllers
             return Ok(result);
         }
 
+
+        [HttpGet]
         public async Task<IActionResult> Get(int id)
         {
             if (id == null)
@@ -70,6 +72,7 @@ namespace MyBook_Backend.Controllers
 
         }
 
+        [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
         {
             var res = await _userService.GetAll();
