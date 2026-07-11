@@ -1,0 +1,12 @@
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.csproj.AssemblyReference.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.AssemblyInfoInputs.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.AssemblyInfo.cs
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.csproj.CoreCompileInputs.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\bin\Debug\net10.0\MyBookBackend.Domain.deps.json
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\bin\Debug\net10.0\MyBookBackend.Domain.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\bin\Debug\net10.0\MyBookBackend.Domain.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\refint\MyBookBackend.Domain.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\MyBookBackend.Domain.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Domain\obj\Debug\net10.0\ref\MyBookBackend.Domain.dll

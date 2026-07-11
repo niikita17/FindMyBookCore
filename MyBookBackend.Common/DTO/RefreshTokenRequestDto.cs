@@ -1,0 +1,8 @@
+﻿
+namespace MyBookBackend.Common.DTO
+{
+    public class RefreshTokenRequestDto
+    {
+        public string RefreshToken { get; set; }
+    }
+}

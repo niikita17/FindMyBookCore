@@ -1,0 +1,17 @@
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.csproj.AssemblyReference.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.AssemblyInfoInputs.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.AssemblyInfo.cs
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.csproj.CoreCompileInputs.cache
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Repository.deps.json
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Repository.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Repository.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Common.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Domain.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Common.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\bin\Debug\net10.0\MyBookBackend.Domain.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBa.89816C9B.Up2Date
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\refint\MyBookBackend.Repository.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\MyBookBackend.Repository.pdb
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Repository\obj\Debug\net10.0\ref\MyBookBackend.Repository.dll

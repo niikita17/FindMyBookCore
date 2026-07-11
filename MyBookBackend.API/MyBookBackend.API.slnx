@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../MyBookBackend.Common/MyBookBackend.Common.csproj" />
+  <Project Path="../MyBookBackend.Domain/MyBookBackend.Domain.csproj" />
+  <Project Path="../MyBookBackend.Repository/MyBookBackend.Repository.csproj" />
+  <Project Path="../MyBookBackend.Service/MyBookBackend.Service.csproj" />
+  <Project Path="MyBookBackend.API.csproj" />
+</Solution>
