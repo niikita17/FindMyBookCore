@@ -70,3 +70,6 @@ D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\obj\Debug\net10.0\refi
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\obj\Debug\net10.0\MyBookBackend.API.pdb
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\obj\Debug\net10.0\MyBookBackend.API.genruntimeconfig.cache
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\obj\Debug\net10.0\ref\MyBookBackend.API.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\bin\Debug\net10.0\FluentValidation.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.API\obj\Debug\net10.0\MyBookBackend.API.sourcelink.json

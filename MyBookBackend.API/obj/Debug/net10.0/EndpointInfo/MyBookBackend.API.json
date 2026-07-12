@@ -584,11 +584,6 @@
         "additionalProperties": false
       },
       "RegisterUserDto": {
-        "required": [
-          "email",
-          "mobileNo",
-          "password"
-        ],
         "type": "object",
         "properties": {
           "name": {
@@ -596,17 +591,16 @@
             "nullable": true
           },
           "email": {
-            "minLength": 1,
             "type": "string",
-            "format": "email"
+            "nullable": true
           },
           "password": {
-            "minLength": 6,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "mobileNo": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

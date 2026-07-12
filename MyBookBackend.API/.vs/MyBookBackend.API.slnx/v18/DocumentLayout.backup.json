@@ -3,6 +3,48 @@
   "WorkspaceRootPath": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598850D8-C049-F10B-4598-A10343036276}|..\\MyBookBackend.Service\\MyBookBackend.Service.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.service\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598850D8-C049-F10B-4598-A10343036276}|..\\MyBookBackend.Service\\MyBookBackend.Service.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.service\\wrappers\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598850D8-C049-F10B-4598-A10343036276}|..\\MyBookBackend.Service\\MyBookBackend.Service.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\validators\\registeruservalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,19 +53,7 @@
       "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CEBDFE8B-0CE0-9D7C-C3CB-761946EBC546}|..\\MyBookBackend.Repository\\MyBookBackend.Repository.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{598850D8-C049-F10B-4598-A10343036276}|..\\MyBookBackend.Service\\MyBookBackend.Service.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.service\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -57,12 +87,6 @@
       "AbsoluteMoniker": "D:0:0:{9EACEAEB-E50D-EB19-704F-85464574415E}|..\\MyBookBackend.Domain\\MyBookBackend.Domain.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.domain\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\loggedinuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -73,9 +97,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\dto\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{598850D8-C049-F10B-4598-A10343036276}|..\\MyBookBackend.Service\\MyBookBackend.Service.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.service\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEBDFE8B-0CE0-9D7C-C3CB-761946EBC546}|..\\MyBookBackend.Repository\\MyBookBackend.Repository.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.repository\\irepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -111,10 +132,6 @@
       "AbsoluteMoniker": "D:0:0:{9EACEAEB-E50D-EB19-704F-85464574415E}|..\\MyBookBackend.Domain\\MyBookBackend.Domain.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.domain\\domainmodels\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{710CBD11-8EA2-12C2-CFBE-E2CFAB817A5A}|MyBookBackend.API.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9EACEAEB-E50D-EB19-704F-85464574415E}|..\\MyBookBackend.Domain\\MyBookBackend.Domain.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -126,9 +143,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEBDFE8B-0CE0-9D7C-C3CB-761946EBC546}|..\\MyBookBackend.Repository\\MyBookBackend.Repository.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.repository\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33F1CE69-EE37-C775-68CA-6BC0281BA2EC}|..\\MyBookBackend.Common\\MyBookBackend.Common.csproj|d:\\projects\\csharp\\mybook\\mybookbackend\\mybookbackend.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -143,110 +157,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-11T16:43:29.991Z",
+              "Title": "ValidationFilter.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Filters\\ValidationFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\ValidationFilter.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Filters\\ValidationFilter.cs",
+              "RelativeToolTip": "Filters\\ValidationFilter.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T07:20:59.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-11T16:43:27.208Z",
+              "DocumentIndex": 4,
+              "Title": "Result.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\Wrappers\\Result.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\Wrappers\\Result.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\Wrappers\\Result.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Service\\Wrappers\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T07:02:07.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\CartService.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\CartService.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\CartService.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Service\\CartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T07:02:03.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T06:56:20.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterUservalidator.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\Validators\\RegisterUservalidator.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\Validators\\RegisterUservalidator.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\Validators\\RegisterUservalidator.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Common\\Validators\\RegisterUservalidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T06:07:10.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T16:35:52.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\BookService.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\BookService.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\BookService.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Service\\BookService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADgvwYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:34:31.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AuthService.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\AuthService.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AuthService.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Service\\AuthService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAEwBQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:34:19.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\UserRepository.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\UserRepository.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Repository\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AdminService.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\AdminService.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AdminService.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Service\\AdminService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:31:57.873Z",
+              "WhenOpened": "2026-07-11T15:46:03.323Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BookRepository.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\BookRepository.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\BookRepository.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\BookRepository.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Repository\\BookRepository.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAowBgAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:26:43.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T14:03:50.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "ExceptionMiddleware.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Middlewares\\ExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "Middlewares\\ExceptionMiddleware.cs",
@@ -254,38 +268,36 @@
               "RelativeToolTip": "Middlewares\\ExceptionMiddleware.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:10:33.874Z",
+              "WhenOpened": "2026-07-11T14:10:33.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-11T16:43:27.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T14:10:59.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "CartRepository.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\CartRepository.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\CartRepository.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\CartRepository.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Repository\\CartRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:31:52.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IBookRepository.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAIAxwBQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:29:45.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "UserResponseDto.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\UserResponseDto.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\UserResponseDto.cs",
@@ -299,6 +311,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:08:22.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-11T16:43:29.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\UserRepository.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\UserRepository.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Repository\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:31:57.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\BookService.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\BookService.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\BookService.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Service\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADgvwYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:34:31.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AuthService.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\AuthService.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AuthService.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Service\\AuthService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAEwBQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:34:19.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\BookRepository.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\BookRepository.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\BookRepository.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Repository\\BookRepository.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAowBgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:26:43.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CartRepository.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\CartRepository.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\CartRepository.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\CartRepository.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Repository\\CartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:31:52.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IBookRepository.cs",
+              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
+              "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
+              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
+              "RelativeToolTip": "..\\MyBookBackend.Repository\\IRepository\\IBookRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAIAxwBQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:29:45.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "AuthRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\AuthRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\AuthRepository.cs",
@@ -306,12 +415,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Repository\\AuthRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:29:53.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:29:53.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "AdminRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\AdminRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\AdminRepository.cs",
@@ -319,12 +427,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Repository\\AdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:31:27.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:31:27.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "AuditRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\AuditRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\AuditRepository.cs",
@@ -332,25 +439,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Repository\\AuditRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:30:38.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:30:38.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RegisterUserDto.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\RegisterUserDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:08:22.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "LoggedInUserDto.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\LoggedInUserDto.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\LoggedInUserDto.cs",
@@ -358,12 +451,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\LoggedInUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:08:13.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T16:08:13.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "BookResponseDto.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\BookResponseDto.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\BookResponseDto.cs",
@@ -371,12 +463,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\BookResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T16:07:58.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T16:07:58.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "MyBookBackend.API.csproj",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\MyBookBackend.API.csproj",
               "RelativeDocumentMoniker": "MyBookBackend.API.csproj",
@@ -384,12 +475,11 @@
               "RelativeToolTip": "MyBookBackend.API.csproj",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-11T14:39:55.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:39:55.809Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "EditProductDto.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\EditProductDto.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\EditProductDto.cs",
@@ -397,12 +487,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\EditProductDto.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAIAxwAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T15:52:58.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T15:52:58.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Domain\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Domain\\Data\\ApplicationDbContext.cs",
@@ -410,12 +499,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Domain\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:24:42.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:24:42.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "CreateProductDto.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\DTO\\CreateProductDto.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\DTO\\CreateProductDto.cs",
@@ -423,25 +511,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Common\\DTO\\CreateProductDto.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAowA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T15:52:28.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T15:52:28.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AdminService.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\AdminService.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AdminService.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Service\\AdminService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T15:46:03.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "IAuthRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IAuthRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\IRepository\\IAuthRepository.cs",
@@ -453,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "MyBookBackend.Service.csproj",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\MyBookBackend.Service.csproj",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\MyBookBackend.Service.csproj",
@@ -461,12 +535,11 @@
               "RelativeToolTip": "..\\MyBookBackend.Service\\MyBookBackend.Service.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-07-11T14:43:23.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-11T14:43:23.928Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "AuditService.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\AuditService.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\AuditService.cs",
@@ -478,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\IServices\\IAuthService.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\IServices\\IAuthService.cs",
@@ -490,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "IAuditService.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\IServices\\IAuditService.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\IServices\\IAuditService.cs",
@@ -502,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "IAdminService.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\IServices\\IAdminService.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\IServices\\IAdminService.cs",
@@ -514,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "IAuditRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IAuditRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\IRepository\\IAuditRepository.cs",
@@ -526,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "IAdminRepository.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\IRepository\\IAdminRepository.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\IRepository\\IAdminRepository.cs",
@@ -538,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Domain\\DomainModels\\Book.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Domain\\DomainModels\\Book.cs",
@@ -550,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 38,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Domain\\DomainModels\\Cart.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Domain\\DomainModels\\Cart.cs",
@@ -562,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Domain\\DomainModels\\AuditLog.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Domain\\DomainModels\\AuditLog.cs",
@@ -574,19 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T14:10:59.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Domain\\Class1.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Domain\\Class1.cs",
@@ -598,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -610,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Service\\Class1.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Service\\Class1.cs",
@@ -622,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Repository\\Class1.cs",
               "RelativeDocumentMoniker": "..\\MyBookBackend.Repository\\Class1.cs",
@@ -631,18 +692,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-11T13:49:21.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\MyBookBackend.Common\\Class1.cs",
-              "ToolTip": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.Common\\Class1.cs",
-              "RelativeToolTip": "..\\MyBookBackend.Common\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T13:48:22.205Z"
             }
           ]
         }

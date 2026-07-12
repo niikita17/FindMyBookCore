@@ -27,6 +27,35 @@
           }
         }
       },
+      "FluentValidation/12.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "12.1.1"
+        },
+        "compile": {
+          "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.9": {
         "type": "package",
         "dependencies": {
@@ -547,6 +576,10 @@
       "MyBookBackend.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "FluentValidation": "12.1.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1"
+        },
         "compile": {
           "bin/placeholder/MyBookBackend.Common.dll": {}
         },
@@ -645,6 +678,36 @@
         "lib/netstandard1.3/CloudinaryDotNet.xml",
         "lib/netstandard2.0/CloudinaryDotNet.dll",
         "lib/netstandard2.0/CloudinaryDotNet.xml"
+      ]
+    },
+    "FluentValidation/12.1.1": {
+      "sha512": "EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+      "type": "package",
+      "path": "fluentvalidation/12.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.12.1.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net8.0/FluentValidation.dll",
+        "lib/net8.0/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+      "sha512": "D0VXh4dtjjX2aQizuaa0g6R8X3U1JaVqJPfGCvLwZX9t/O2h7tkpbitbadQMfwcgSPdDbI2vDxuwRMv/Uf9dHA==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/12.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/net8.0/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.9": {
@@ -1631,6 +1694,8 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "CloudinaryDotNet >= 1.29.2",
+      "FluentValidation >= 12.1.1",
+      "FluentValidation.DependencyInjectionExtensions >= 12.1.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.9",
       "MyBookBackend.Common >= 1.0.0",
       "MyBookBackend.Service >= 1.0.0",
@@ -1703,6 +1768,14 @@
           "CloudinaryDotNet": {
             "target": "Package",
             "version": "[1.29.2, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[12.1.1, )"
+          },
+          "FluentValidation.DependencyInjectionExtensions": {
+            "target": "Package",
+            "version": "[12.1.1, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

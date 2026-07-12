@@ -1,12 +1,13 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using MyBookBackend.Domain.Data;
 using MyBookBackend.API.Middlewares;
-
+using MyBookBackend.Common.Validators;
+using MyBookBackend.Common.Validators.Auth;
+using MyBookBackend.Domain.Data;
 using MyBookBackend.Repository;
-
 using MyBookBackend.Repository.IRepository;
 using MyBookBackend.Service;
 using MyBookBackend.Service.IServices;
@@ -18,6 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
+ builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyBookBackend.Common.DTO;
 using MyBookBackend.Service.IServices;
@@ -13,23 +14,32 @@ namespace MyBookBackend.API.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+
+        private readonly IValidator<RegisterUserDto> _validator;
+        public UserController(
+        IUserService userService,
+        IValidator<RegisterUserDto> validator)
         {
             _userService = userService;
+            _validator = validator;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Post(RegisterUserDto user)
         {
-            if (user == null)
-                return BadRequest("All feilds are required");
+            var validationResult =
+                await _validator.ValidateAsync(user);
 
-          
-            var result = await _userService.AddUser(user);
+            if (!validationResult.IsValid)
+            {
+                return BadRequest(validationResult.Errors);
+            }
+
+            var result =
+                await _userService.AddUser(user);
 
             return Ok(result);
         }
-
         //edit user
         [Authorize]
         [HttpPut]

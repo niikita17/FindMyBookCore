@@ -9,6 +9,8 @@
       "MyBookBackend.API/1.0.0": {
         "dependencies": {
           "CloudinaryDotNet": "1.29.2",
+          "FluentValidation": "12.1.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.9",
           "MyBookBackend.Common": "1.0.0",
           "MyBookBackend.Service": "1.0.0",
@@ -38,6 +40,25 @@
           "lib/netstandard2.0/CloudinaryDotNet.dll": {
             "assemblyVersion": "1.29.2.0",
             "fileVersion": "1.29.2.0"
+          }
+        }
+      },
+      "FluentValidation/12.1.1": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+        "dependencies": {
+          "FluentValidation": "12.1.1"
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
           }
         }
       },
@@ -365,6 +386,10 @@
         }
       },
       "MyBookBackend.Common/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "12.1.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1"
+        },
         "runtime": {
           "MyBookBackend.Common.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -433,6 +458,20 @@
       "sha512": "sha512-4vrrx4N960MShjpKlsiRdl8eIHeT2UBn2X69d7b7C34M84lyoZT/ig4CkVCCb8fx5X95oaLE3wNv4tGJHHGnSA==",
       "path": "cloudinarydotnet/1.29.2",
       "hashPath": "cloudinarydotnet.1.29.2.nupkg.sha512"
+    },
+    "FluentValidation/12.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+      "path": "fluentvalidation/12.1.1",
+      "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/12.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0VXh4dtjjX2aQizuaa0g6R8X3U1JaVqJPfGCvLwZX9t/O2h7tkpbitbadQMfwcgSPdDbI2vDxuwRMv/Uf9dHA==",
+      "path": "fluentvalidation.dependencyinjectionextensions/12.1.1",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.9": {
       "type": "package",

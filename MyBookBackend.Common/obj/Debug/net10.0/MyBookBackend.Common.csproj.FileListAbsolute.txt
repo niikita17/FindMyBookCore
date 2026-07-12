@@ -10,3 +10,4 @@ D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Common\obj\Debug\net10.0\M
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Common\obj\Debug\net10.0\refint\MyBookBackend.Common.dll
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Common\obj\Debug\net10.0\MyBookBackend.Common.pdb
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Common\obj\Debug\net10.0\ref\MyBookBackend.Common.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Common\obj\Debug\net10.0\MyBookBackend.Common.sourcelink.json
