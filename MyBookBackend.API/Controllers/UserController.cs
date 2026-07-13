@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Asp.Versioning;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyBookBackend.Common.DTO;
@@ -8,9 +9,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyBookBackend.API.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
-   
+    [ApiVersion("1.0")]
+
+    [Route("api/v{version:apiVersion}/user")]
+
     public class UserController : Controller
     {
         private readonly IUserService _userService;

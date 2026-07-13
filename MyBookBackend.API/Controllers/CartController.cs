@@ -1,16 +1,20 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Common.DTO;
+using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Service.IServices;
 using System.Security.Claims;
 
 namespace MyBookBackend.API.Controllers
 {
     [ApiController]
-    [Route("api/cart")]
+  
     [Authorize]
+    [ApiVersion("1.0")]
+
+    [Route("api/v{version:apiVersion}/cart")]
     public class CartController
         : ControllerBase
     {

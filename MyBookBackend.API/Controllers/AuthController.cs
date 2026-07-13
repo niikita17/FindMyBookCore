@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using MyBookBackend.Common.DTO;
@@ -10,8 +11,11 @@ using System.Security.Claims;
 namespace MyBookBackend.API.Controllers
 {
     [ApiController]
-    [Route("api/auth")]
-    
+   
+    [ApiVersion("1.0")]
+
+    [Route("api/v{version:apiVersion}/auth")]
+
     public class AuthController:ControllerBase
     {
         private readonly IAuthService _authService;

@@ -1,17 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Common.DTO;
-
+using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Service.IServices;
 using System.Globalization;
 
 namespace MyBookBackend.API.Controllers
 {
-    [Route("api/book")]
+
     [ApiController]
     [Authorize]
+    [ApiVersion("1.0")]
+
+    [Route("api/v{version:apiVersion}/book")]
     public class BookController : ControllerBase
     {
         public readonly IBookService _bookService;

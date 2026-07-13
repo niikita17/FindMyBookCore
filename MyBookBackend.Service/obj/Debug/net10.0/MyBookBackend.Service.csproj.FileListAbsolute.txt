@@ -17,3 +17,4 @@ D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Service\obj\Debug\net10.0\
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Service\obj\Debug\net10.0\refint\MyBookBackend.Service.dll
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Service\obj\Debug\net10.0\MyBookBackend.Service.pdb
 D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Service\obj\Debug\net10.0\ref\MyBookBackend.Service.dll
+D:\projects\Csharp\MyBook\MyBookbackend\MyBookBackend.Service\obj\Debug\net10.0\MyBookBackend.Service.sourcelink.json

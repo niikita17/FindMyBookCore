@@ -12,15 +12,45 @@ using MyBookBackend.Repository.IRepository;
 using MyBookBackend.Service;
 using MyBookBackend.Service.IServices;
 using Serilog;
+using Serilog.Events;
 using System.Text;
+using Asp.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddMemoryCache();
+//APIversioning
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+
+    options.AssumeDefaultVersionWhenUnspecified = true;
+
+    options.ReportApiVersions = true;
+});
 builder.Services.AddControllers();
  builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
 builder.Services.AddEndpointsApiExplorer();
+//serolog
+Log.Logger = new LoggerConfiguration()
+   .MinimumLevel.Information()
+
+.MinimumLevel.Override(
+    "Microsoft",
+    LogEventLevel.Warning)          
+
+.MinimumLevel.Override(
+    "Microsoft.AspNetCore",
+    LogEventLevel.Warning)
+    .WriteTo.Console()
+    .WriteTo.File(
+        "Logs/log-.txt",
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 7)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -110,22 +140,8 @@ builder.Services.AddCors(options =>
         });
 });
 
-//loggong service
-Log.Logger = new LoggerConfiguration()
 
-    .MinimumLevel.Information()
 
-    .WriteTo.Console()
-
-    .WriteTo.File(
-        "logs/log-.txt",
-        rollingInterval:
-            RollingInterval.Day
-    )
-
-    .CreateLogger();
-
-builder.Host.UseSerilog();
 
 
 var app = builder.Build();

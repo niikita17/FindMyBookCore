@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -9,7 +10,10 @@ using MyBookBackend.Service.IServices;
 namespace MyBookBackend.API.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+
+    [Route("api/v{version:apiVersion}/admin")]
+
     [ApiController]
     public class AdminController : ControllerBase
     {

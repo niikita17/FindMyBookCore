@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "risiTWxeW2c=",
+  "dgSpecHash": "1AzDK2t6BnY=",
   "success": true,
   "projectFilePath": "D:\\projects\\Csharp\\MyBook\\MyBookbackend\\MyBookBackend.API\\MyBookBackend.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\91914\\.nuget\\packages\\asp.versioning.abstractions\\10.0.0\\asp.versioning.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\91914\\.nuget\\packages\\asp.versioning.http\\10.0.0\\asp.versioning.http.10.0.0.nupkg.sha512",
+    "C:\\Users\\91914\\.nuget\\packages\\asp.versioning.mvc\\10.0.0\\asp.versioning.mvc.10.0.0.nupkg.sha512",
     "C:\\Users\\91914\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\91914\\.nuget\\packages\\cloudinarydotnet\\1.29.2\\cloudinarydotnet.1.29.2.nupkg.sha512",
     "C:\\Users\\91914\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
