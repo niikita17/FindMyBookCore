@@ -1,11 +1,12 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "MyBookBackend.API",
+    "title": "MyBook Backend API",
+    "description": "API Documentation",
     "version": "1.0"
   },
   "paths": {
-    "/api/Admin/dashboard": {
+    "/api/v1/admin/dashboard": {
       "get": {
         "tags": [
           "Admin"
@@ -17,7 +18,7 @@
         }
       }
     },
-    "/api/auth/login": {
+    "/api/v1/auth/login": {
       "post": {
         "tags": [
           "Auth"
@@ -48,7 +49,7 @@
         }
       }
     },
-    "/api/auth/refresh-token": {
+    "/api/v1/auth/refresh-token": {
       "post": {
         "tags": [
           "Auth"
@@ -60,7 +61,7 @@
         }
       }
     },
-    "/api/auth/logout": {
+    "/api/v1/auth/logout": {
       "post": {
         "tags": [
           "Auth"
@@ -72,7 +73,7 @@
         }
       }
     },
-    "/api/book/create": {
+    "/api/v1/book/create": {
       "post": {
         "tags": [
           "Book"
@@ -143,7 +144,7 @@
         }
       }
     },
-    "/api/book/getall": {
+    "/api/v1/book/getall": {
       "get": {
         "tags": [
           "Book"
@@ -197,7 +198,7 @@
         }
       }
     },
-    "/api/book/{id}": {
+    "/api/v1/book/{id}": {
       "get": {
         "tags": [
           "Book"
@@ -241,7 +242,7 @@
         }
       }
     },
-    "/api/book/edit/{id}": {
+    "/api/v1/book/edit/{id}": {
       "put": {
         "tags": [
           "Book"
@@ -323,7 +324,7 @@
         }
       }
     },
-    "/api/cart/add": {
+    "/api/v1/cart/add": {
       "post": {
         "tags": [
           "Cart"
@@ -354,7 +355,7 @@
         }
       }
     },
-    "/api/cart/mycart": {
+    "/api/v1/cart/mycart": {
       "get": {
         "tags": [
           "Cart"
@@ -366,7 +367,7 @@
         }
       }
     },
-    "/api/cart/{id}": {
+    "/api/v1/cart/{id}": {
       "delete": {
         "tags": [
           "Cart"
@@ -389,7 +390,7 @@
         }
       }
     },
-    "/api/User/register": {
+    "/api/v1/user/register": {
       "post": {
         "tags": [
           "User"
@@ -420,7 +421,7 @@
         }
       }
     },
-    "/api/User": {
+    "/api/v1/user": {
       "put": {
         "tags": [
           "User"
@@ -501,7 +502,7 @@
         }
       }
     },
-    "/api/User/getall": {
+    "/api/v1/user/getall": {
       "get": {
         "tags": [
           "User"
@@ -519,6 +520,15 @@
           "WeatherForecast"
         ],
         "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -676,7 +686,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "http",
-        "description": "JWT Authorization header. Example: Bearer {token}",
+        "description": "Enter JWT Token.\nExample: Bearer {token}",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

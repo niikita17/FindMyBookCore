@@ -7,7 +7,7 @@ using MyBookBackend.Common.DTO;
 
 using MyBookBackend.Service.IServices;
 
-namespace MyBookBackend.API.Controllers
+namespace MyBookBackend.API.Controllers.V1
 {
     [Authorize]
     [ApiVersion("1.0")]

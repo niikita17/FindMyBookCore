@@ -33,6 +33,8 @@ namespace MyBookBackend.Common.Validators
                 .NotNull()
                 .WithMessage("Cateogy iD cannot ib null");
 
+            RuleFor(X=>X.Image)
+                .NotEmpty();
 
 
 

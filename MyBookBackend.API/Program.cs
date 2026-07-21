@@ -1,26 +1,36 @@
+using Asp.Versioning;
 using FluentValidation;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using MyBookBackend.API.Configurations;
+using MyBookBackend.API.Extensions;
 using MyBookBackend.API.Middlewares;
+using MyBookBackend.Common.Interfaces;
+using MyBookBackend.Common.Service;
 using MyBookBackend.Common.Validators;
 using MyBookBackend.Common.Validators.Auth;
-using MyBookBackend.Domain.Data;
-using MyBookBackend.Repository;
-using MyBookBackend.Repository.IRepository;
-using MyBookBackend.Service;
-using MyBookBackend.Service.IServices;
 using Serilog;
-using Serilog.Events;
-using System.Text;
-using Asp.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+#region Logging
+
+builder.Host.AddSerilogConfiguration();
+
+#endregion
+
+#region Framework Services
+
+builder.Services.AddControllers();
+
 builder.Services.AddMemoryCache();
-//APIversioning
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
+
+#endregion
+
+#region API Versioning
+
 builder.Services.AddApiVersioning(options =>
 {
     options.DefaultApiVersion = new ApiVersion(1, 0);
@@ -28,143 +38,87 @@ builder.Services.AddApiVersioning(options =>
     options.AssumeDefaultVersionWhenUnspecified = true;
 
     options.ReportApiVersions = true;
-});
-builder.Services.AddControllers();
- builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
-builder.Services.AddEndpointsApiExplorer();
-//serolog
-Log.Logger = new LoggerConfiguration()
-   .MinimumLevel.Information()
-
-.MinimumLevel.Override(
-    "Microsoft",
-    LogEventLevel.Warning)          
-
-.MinimumLevel.Override(
-    "Microsoft.AspNetCore",
-    LogEventLevel.Warning)
-    .WriteTo.Console()
-    .WriteTo.File(
-        "Logs/log-.txt",
-        rollingInterval: RollingInterval.Day,
-        retainedFileCountLimit: 7)
-    .CreateLogger();
-
-builder.Host.UseSerilog();
-
-builder.Services.AddSwaggerGen(options =>
+})
+.AddApiExplorer(options =>
 {
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "JWT Authorization header. Example: Bearer {token}",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT"
-    });
+    options.GroupNameFormat = "'v'VVV";
 
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            Array.Empty<string>()
-        }
-    });
-});
-builder.Services.AddHttpContextAccessor();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-
-builder.Services.AddScoped<IAuthRepository, AuthRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IBookRepository, BookRepository>();
-builder.Services.AddScoped<IAdminRepository, AdminRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
-builder.Services.AddScoped<IAuditRepository, AuditRepository>();
-
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IAdminService, AdminService>();
-builder.Services.AddScoped<ICartService, CartService>();
-builder.Services.AddScoped<IAuditService, AuditService>();
-
-builder.Services.AddDbContext<ApplicationDbContext>(
-    options =>
-        options.UseNpgsql(
-            builder.Configuration.GetConnectionString("DefaultConnection")));
-
-var jwtKey = builder.Configuration["Jwt:Key"];
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateIssuerSigningKey = true,
-        ValidateLifetime = true,
-
-        // ✅ REMOVE DEFAULT 5 MINUTES
-        ClockSkew = TimeSpan.Zero,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-
-        IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwtKey))
-    };
-}
-);
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(
-        "AllowAll",
-        policy =>
-        {
-            policy
-                .WithOrigins(
-                    "http://localhost:5173",
-                                    "https://findmybook.onrender.com"
-                 )
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
-        });
+    options.SubstituteApiVersionInUrl = true;
 });
 
+#endregion
 
+#region Swagger
 
+builder.Services.AddSwaggerConfiguration();
 
+#endregion
+
+#region Database
+
+builder.Services.AddApplicationDatabase(builder.Configuration);
+
+#endregion
+
+#region Authentication
+
+builder.Services.AddJwtAuthentication(builder.Configuration);
+
+#endregion
+
+#region CORS
+
+builder.Services.AddCorsConfiguration();
+
+#endregion
+
+#region Dependency Injection
+builder.Services.AddSingleton<ICacheService, CacheService>();
+
+builder.Services.AddRepositories();
+
+builder.Services.AddApplicationServices();
+
+#endregion
 
 var app = builder.Build();
 
+#region Middleware Pipeline
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapOpenApi();
-//}
+app.UseSerilogRequestLogging();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 
-app.UseSwagger();
-app.UseSwaggerUI();
+    app.UseSwagger();
+
+    app.UseSwaggerUI(options =>
+    {
+        var provider =
+            app.Services.GetRequiredService<
+                Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider>();
+
+        foreach (var description in provider.ApiVersionDescriptions)
+        {
+            options.SwaggerEndpoint(
+                $"/swagger/{description.GroupName}/swagger.json",
+                description.GroupName.ToUpperInvariant());
+        }
+    });
+
+
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseCors("AllowAll");
-app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseAuthentication();
 
 app.UseAuthorization();
-app.UseSerilogRequestLogging();
+
 app.MapControllers();
+
+#endregion
 
 app.Run();

@@ -8,7 +8,7 @@ using MyBookBackend.Service.IServices;
 using Serilog;
 using System.Security.Claims;
 
-namespace MyBookBackend.API.Controllers
+namespace MyBookBackend.API.Controllers.V1
 {
     [ApiController]
    

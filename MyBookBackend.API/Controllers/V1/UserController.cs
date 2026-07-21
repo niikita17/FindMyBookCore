@@ -7,7 +7,7 @@ using MyBookBackend.Service.IServices;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace MyBookBackend.API.Controllers
+namespace MyBookBackend.API.Controllers.V1
 {
 
     [ApiController]

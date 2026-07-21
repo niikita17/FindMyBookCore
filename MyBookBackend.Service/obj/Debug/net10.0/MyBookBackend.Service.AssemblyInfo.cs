@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyBookBackend.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+328b1c2a89d2169eb2bd904f85d57e1e0a04d444")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c2a95deeb7b9debc15e95feff93b83ced31d725")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyBookBackend.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyBookBackend.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

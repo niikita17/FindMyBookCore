@@ -1,11 +1,14 @@
-﻿using Microsoft.Identity.Client;
-using MyBookBackend.Domain.DomainModels;
+﻿using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.Identity.Client;
+using MyBookBackend.Common.Constants;
 using MyBookBackend.Common.DTO;
+using MyBookBackend.Common.Interfaces;
 using MyBookBackend.Domain.Data;
-
+using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Repository.IRepository;
 using MyBookBackend.Service.IServices;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace MyBookBackend.Service
 {
@@ -13,26 +16,23 @@ namespace MyBookBackend.Service
     {
         public readonly ApplicationDbContext _dbContext;
         private readonly IBookRepository _bookRepository;
-        private readonly IMemoryCache _cache;
+        private readonly ICacheService _cacheService;
         private readonly IAuditService _auditService;
         private readonly IAuthService _authService;
+        private readonly ILogger<IBookService> _logger;
 
-
-        public BookService(ApplicationDbContext dbcontext, IBookRepository bookRepository, IMemoryCache cache, IAuditService auditService,IAuthService authService)
+        public BookService(ApplicationDbContext dbcontext, IBookRepository bookRepository, ICacheService cache, IAuditService auditService,IAuthService authService, ILogger<IBookService> logger)
         {
-           
+            _logger = logger;
             _dbContext = dbcontext;
             _bookRepository = bookRepository;
-            _cache = cache;
+            _cacheService = cache;
             _auditService = auditService;
             _authService = authService;
         }
         public async Task<Result<BookResponseDto>> Create(CreateProductDto book)
         {
-            if (book.Image == null || book.Image.Length <= 0)
-            {
-                return Result<BookResponseDto>.Failure("Image is null");
-            }
+           
             var allowedExtensions = new[]
             {
                 ".jpg",
@@ -40,15 +40,16 @@ namespace MyBookBackend.Service
                 ".png"
             };
             var extension = Path.GetExtension(book.Image.FileName).ToLower();
+
             if (!allowedExtensions.Contains(extension))
             {
                 return Result<BookResponseDto>.Failure("Somting went wrong");
             }
-
+            
+           
 
             var newBook = await _bookRepository.Create(book);
-            _cache.Remove("all_books");
-            _cache.Remove("admin_dashboard");
+            
             if (newBook == null)
             {
                 return Result<BookResponseDto>.Failure("Somting went wrong");
@@ -74,6 +75,10 @@ namespace MyBookBackend.Service
      description:
          $"Created book {newBook.Title}");
 
+            //remove cache 
+            _cacheService.RemoveByPrefix("books");
+
+
             return Result<BookResponseDto>.Success(res, "Book Added sucessfully");
         }
 
@@ -85,9 +90,7 @@ namespace MyBookBackend.Service
             }
 
             Book book=await _bookRepository.Delete(Id);
-            _cache.Remove("all_books");
-            _cache.Remove("admin_dashboard");
-            _cache.Remove($"book_{Id}");
+         
             if (book == null)
             {
                 return Result<Book>.Failure("Id is null");
@@ -100,6 +103,9 @@ namespace MyBookBackend.Service
     entityId: book.Id,
     description:
         $"Deleted book {book.Title}");
+            _cacheService.Remove(CacheKeys.BookById(Id));
+
+            _cacheService.RemoveByPrefix("books");
             return Result<Book>.Success(book);
 
         }
@@ -110,8 +116,7 @@ namespace MyBookBackend.Service
             Book editedBook = await _bookRepository.Edit(id, book);
             if (editedBook == null)
                 return Result<BookResponseDto>.Failure("Id is null");
-            _cache.Remove("all_books");
-            _cache.Remove($"book_{id}");
+        
             var res = new BookResponseDto
             {
                 Id = editedBook.Id,
@@ -131,6 +136,11 @@ namespace MyBookBackend.Service
     entityId: editedBook.Id,
     description:
         $"Updated book {editedBook.Title}");
+
+
+            _cacheService.RemoveByPrefix("books");
+
+            _cacheService.Remove(CacheKeys.BookById(id));
             return Result<BookResponseDto>.Success(res, "book edited sucesssfully");
 
 
@@ -138,16 +148,16 @@ namespace MyBookBackend.Service
         public async Task<Result<BookResponseDto>>  Get(int id)
         {
 
-            string cacheKey = $"book_{id}";
+            var cacheKey = CacheKeys.BookById(id);
 
-            if (_cache.TryGetValue(
-                cacheKey,
-                out BookResponseDto b))
+            if (_cacheService.TryGetValue(
+                    cacheKey,
+                    out Result<BookResponseDto>? cachedBook))
             {
-                return Result<BookResponseDto>
-                    .Success(b, "sucess");
-            }
+                _logger.LogInformation("Book returned from cache.");
 
+                return cachedBook!;
+            }
 
             var book =
                 await _bookRepository.Get(id);
@@ -157,7 +167,8 @@ namespace MyBookBackend.Service
                 return Result<BookResponseDto>
                     .Failure("Book not found");
             }
-            _cache.Set( cacheKey, book, TimeSpan.FromMinutes(10));
+        
+
 
 
             var response = new BookResponseDto
@@ -172,15 +183,35 @@ namespace MyBookBackend.Service
                 CategoryName = book.Category?.Name
             };
 
-            return Result<BookResponseDto>
-                .Success(response);
+            var result = Result<BookResponseDto>.Success(response);
+
+            _cacheService.Set(
+                cacheKey,
+                result,
+                new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow =
+                        TimeSpan.FromMinutes(5)
+                });
+
+            return result;
         }
 
         public async Task<Result<PagedResponseDto<BookResponseDto>>> GetAll(string? search,int? categoryId,int page = 1,int pageSize = 10,string? sortBy = null)
         {
+            var cacheKey = CacheKeys.Books(
+                search,
+                categoryId,
+                page,
+                pageSize,
+                sortBy);
 
-            const string cacheKey = "all_books";
-
+            if (_cacheService.TryGetValue(
+      cacheKey,
+      out Result<PagedResponseDto<BookResponseDto>>? cachedResult))
+            {
+                return cachedResult!;
+            }
 
             var query =  _bookRepository.GetAll();
 
@@ -241,8 +272,18 @@ namespace MyBookBackend.Service
                      totalCount / (double)pageSize)
             };
 
+            var result = Result<PagedResponseDto<BookResponseDto>>
+                .Success(data);
 
-            return Result<PagedResponseDto<BookResponseDto>>.Success(data);
+            _cacheService.Set(
+                cacheKey,
+                result,
+                new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+                });
+
+            return result;
         }
 
       

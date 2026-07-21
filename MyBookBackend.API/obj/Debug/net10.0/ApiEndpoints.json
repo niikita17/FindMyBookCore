@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "MyBookBackend.API.Controllers.AdminController",
+    "ContainingType": "MyBookBackend.API.Controllers.V1.AdminController",
     "Method": "GetDashboard",
-    "RelativePath": "api/Admin/dashboard",
+    "RelativePath": "api/v1/admin/dashboard",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,9 +10,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyBookBackend.API.Controllers.AuthController",
+    "ContainingType": "MyBookBackend.API.Controllers.V1.AuthController",
     "Method": "Login",
-    "RelativePath": "api/auth/login",
+    "RelativePath": "api/v1/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,9 +26,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyBookBackend.API.Controllers.AuthController",
+    "ContainingType": "MyBookBackend.API.Controllers.V1.AuthController",
     "Method": "Logout",
-    "RelativePath": "api/auth/logout",
+    "RelativePath": "api/v1/auth/logout",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -36,19 +36,305 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyBookBackend.API.Controllers.AuthController",
+    "ContainingType": "MyBookBackend.API.Controllers.V1.AuthController",
     "Method": "RefreshToken",
-    "RelativePath": "api/auth/refresh-token",
+    "RelativePath": "api/v1/auth/refresh-token",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.BookController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/book/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.BookController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/book/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.BookController",
+    "Method": "Create",
+    "RelativePath": "api/v1/book/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockQuantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.BookController",
+    "Method": "Edit",
+    "RelativePath": "api/v1/book/edit/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "StockQuantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.BookController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/book/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.CartController",
+    "Method": "Remove",
+    "RelativePath": "api/v1/cart/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/v1/cart/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MyBookBackend.Common.DTO.AddToCartDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.CartController",
+    "Method": "GetMyCart",
+    "RelativePath": "api/v1/cart/mycart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.UserController",
+    "Method": "Put",
+    "RelativePath": "api/v1/user",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "user",
+        "Type": "MyBookBackend.Common.DTO.UserResponseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/user",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.UserController",
+    "Method": "Get",
+    "RelativePath": "api/v1/user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/user/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyBookBackend.API.Controllers.V1.UserController",
+    "Method": "Post",
+    "RelativePath": "api/v1/user/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MyBookBackend.Common.DTO.RegisterUserDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "MyBookBackend.API.Controllers.BookController",
     "Method": "GetById",
-    "RelativePath": "api/book/{id}",
+    "RelativePath": "api/v2/book/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -64,7 +350,7 @@
   {
     "ContainingType": "MyBookBackend.API.Controllers.BookController",
     "Method": "Delete",
-    "RelativePath": "api/book/{id}",
+    "RelativePath": "api/v2/book/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -80,7 +366,7 @@
   {
     "ContainingType": "MyBookBackend.API.Controllers.BookController",
     "Method": "Create",
-    "RelativePath": "api/book/create",
+    "RelativePath": "api/v2/book/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -126,7 +412,7 @@
   {
     "ContainingType": "MyBookBackend.API.Controllers.BookController",
     "Method": "Edit",
-    "RelativePath": "api/book/edit/{id}",
+    "RelativePath": "api/v2/book/edit/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -177,7 +463,7 @@
   {
     "ContainingType": "MyBookBackend.API.Controllers.BookController",
     "Method": "GetAll",
-    "RelativePath": "api/book/getall",
+    "RelativePath": "api/v2/book/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -211,134 +497,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "MyBookBackend.API.Controllers.CartController",
-    "Method": "Remove",
-    "RelativePath": "api/cart/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.CartController",
-    "Method": "AddToCart",
-    "RelativePath": "api/cart/add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "MyBookBackend.Common.DTO.AddToCartDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.CartController",
-    "Method": "GetMyCart",
-    "RelativePath": "api/cart/mycart",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.UserController",
-    "Method": "Put",
-    "RelativePath": "api/User",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "user",
-        "Type": "MyBookBackend.Common.DTO.UserResponseDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.UserController",
-    "Method": "Delete",
-    "RelativePath": "api/User",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.UserController",
-    "Method": "Get",
-    "RelativePath": "api/User",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.UserController",
-    "Method": "GetAll",
-    "RelativePath": "api/User/getall",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.UserController",
-    "Method": "Post",
-    "RelativePath": "api/User/register",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "MyBookBackend.Common.DTO.RegisterUserDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MyBookBackend.API.Controllers.WeatherForecastController",
+    "ContainingType": "MyBookBackend.API.Controllers.V1.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "api-version",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[MyBookBackend.API.WeatherForecast, MyBookBackend.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",

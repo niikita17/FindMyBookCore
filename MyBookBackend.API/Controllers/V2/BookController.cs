@@ -11,7 +11,7 @@ namespace MyBookBackend.API.Controllers
 
     [ApiController]
     [Authorize]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
 
     [Route("api/v{version:apiVersion}/book")]
     public class BookController : ControllerBase
