@@ -9,6 +9,9 @@ bin/
 .env
 appsettings.json
 appsettings.Development.json
+MyBookBackend.API/appsettings.Development.json
+
+appsettings.Development.json
 /Logs
 /logs
 # User-specific files
