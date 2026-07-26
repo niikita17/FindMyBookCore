@@ -233,10 +233,10 @@ namespace MyBookBackend.Repository
         public IQueryable<Book> GetAll()
         {
             return _dbContext.Books
-                .Include(b => b.Category)
-                .AsQueryable();
+                .AsNoTracking()
+                .Include(b => b.Category);
         }
 
-       
+
     }
 }

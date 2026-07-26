@@ -2,6 +2,7 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using MyBookBackend.Common.DTO;
 using MyBookBackend.Service.IServices;
 using System.ComponentModel.DataAnnotations;
@@ -29,6 +30,7 @@ namespace MyBookBackend.API.Controllers.V1
         }
 
         [HttpPost("register")]
+        [EnableRateLimiting("LoginPolicy")]
         public async Task<IActionResult> Post(RegisterUserDto user)
         {
             var validationResult =

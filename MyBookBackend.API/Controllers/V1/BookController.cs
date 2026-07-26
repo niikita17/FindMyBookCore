@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using MyBookBackend.Common.DTO;
 using MyBookBackend.Domain.DomainModels;
 using MyBookBackend.Service.IServices;
@@ -14,6 +15,7 @@ namespace MyBookBackend.API.Controllers.V1
     [ApiVersion("1.0")]
 
     [Route("api/v{version:apiVersion}/book")]
+    [EnableRateLimiting("BooksPolicy")]
     public class BookController : ControllerBase
     {
         public readonly IBookService _bookService;

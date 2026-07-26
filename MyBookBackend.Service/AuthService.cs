@@ -84,24 +84,17 @@ new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
                     .Failure("User not found");
             }
 
-            bool isValid =
-       BCrypt.Net.BCrypt.Verify(
-           password,
-           user.Password);
+            bool isValid = BCrypt.Net.BCrypt.Verify( password, user.Password);
 
             if (!isValid)
             {
-                return Result<LoggedInUserDto>
-                    .Failure(
-                        "Username or password incorrect");
+                return Result<LoggedInUserDto>.Failure( "Username or password incorrect");
             }
 
             // BUSINESS LOGIC HERE
-            var accessToken =
-                GenerateToken(user);
+            var accessToken = GenerateToken(user);
 
-            var refreshToken =
-                GenerateRefreshToken();
+            var refreshToken = GenerateRefreshToken();
 
             user.RefreshToken =
                 refreshToken;

@@ -7,6 +7,7 @@ using MyBookBackend.Common.Interfaces;
 using MyBookBackend.Common.Service;
 using MyBookBackend.Common.Validators;
 using MyBookBackend.Common.Validators.Auth;
+using System.Threading.RateLimiting;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -66,6 +67,12 @@ builder.Services.AddJwtAuthentication(builder.Configuration);
 
 #endregion
 
+#region Rate Limiting
+
+builder.Services.AddRateLimitingConfiguration();
+
+#endregion
+
 #region CORS
 
 builder.Services.AddCorsConfiguration();
@@ -112,6 +119,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseCors("AllowAll");
+
+app.UseRateLimiter();
 
 app.UseAuthentication();
 

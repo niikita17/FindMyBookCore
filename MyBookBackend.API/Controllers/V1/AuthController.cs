@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using MyBookBackend.Common.DTO;
 using MyBookBackend.Repository.IRepository;
 using MyBookBackend.Service.IServices;
@@ -30,8 +31,8 @@ namespace MyBookBackend.API.Controllers.V1
 
         //post login
         [HttpPost("login")]
+        [EnableRateLimiting("LoginPolicy")]
 
-     
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
 

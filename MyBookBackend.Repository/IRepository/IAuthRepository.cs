@@ -11,10 +11,9 @@ namespace MyBookBackend.Repository.IRepository
         public  Task Update(User user);
 
 
-       public Task<User?> GetUserByRefreshToken(
-    string refreshToken);
+       public Task<User?> GetUserByRefreshToken(  string refreshToken);
 
-    
+        Task<int> RemoveExpiredRefreshTokens();
 
 
     }
